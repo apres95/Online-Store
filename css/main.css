@@ -8,6 +8,8 @@ body {
 
 .modalContent {
 	background-color: white;
+	margin: 300px;
+	width: 40%;
 }
 .tshirt {
 	margin:20px 0;
