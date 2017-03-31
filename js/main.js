@@ -21,6 +21,27 @@ var shirtArray = new Array
 // add products to array of products
 shirtArray.push(whitetee, blacktee, redtee, bluetee, greentee, yellowtee)
 
+function modalShirt(modalname, modalsize, modalcolor, modalstock, modalimage) {
+	this.modalname  = modalname
+	this.modalsize  = modalsize
+	this.modalcolor = modalcolor
+	this.modalstock = modalstock
+	this.modalimage = modalimage
+}
+
+// create new products from the product constructor
+var modalwhitetee  = new modalShirt("White Tee", "medium", "white", 150, "img/whitetee.png")
+var modalblacktee  = new modalShirt("Black Tee", "medium", "Black", 50, "img/blacktee.png")
+var modalredtee    = new modalShirt("Red Tee", "large", "red", 20, "img/redtee.png")
+var modalbluetee   = new modalShirt("Blue Tee", "small", "blue", 70, "img/bluetee.png")
+var modalgreentee  = new modalShirt("Green Tee", "large", "green", 55, "img/greentee.png")
+var modalyellowtee = new modalShirt("Yellow Tee", "medium", "yellow", 250, "img/yellowtee.png")
+
+var modalshirtArray = new Array
+
+// add products to array of products
+modalshirtArray.push(modalwhitetee, modalblacktee, modalredtee, modalbluetee, modalgreentee, modalyellowtee)
+
 // loop through products array
 for(var i = 0; i < shirtArray.length; i++) {
 	// create new elements for each product
@@ -51,10 +72,10 @@ for(var i = 0; i < shirtArray.length; i++) {
 	var tStock  = document.createTextNode("In stock: " + shirtArray[i].stock)
 	var tButton = document.createTextNode("Buy Now!")
 
-	var modaltName   = document.createTextNode(shirtArray[i].name)
-	var modaltSize   = document.createTextNode("Available size: " + shirtArray[i].size)
-	var modaltColor  = document.createTextNode("Color: " + shirtArray[i].color)
-	var modaltStock  = document.createTextNode("In stock: " + shirtArray[i].stock)
+	var modaltName   = document.createTextNode(modalshirtArray[i].modalname)
+	var modaltSize   = document.createTextNode("Available size: " + modalshirtArray[i].modalsize)
+	var modaltColor  = document.createTextNode("Color: " + modalshirtArray[i].modalcolor)
+	var modaltStock  = document.createTextNode("In stock: " + modalshirtArray[i].modalstock)
 	var modaltButton = document.createTextNode("Buy Now!")
 
 	// update source attribute
@@ -64,14 +85,14 @@ for(var i = 0; i < shirtArray.length; i++) {
 
 	// update class attributes
 	image.className = "img-responsive"
-	btn.className = "btn btn-primary btn-lg"
+	btn.className = "btn btn-primary btn-lg"	
 	modalimage.className = "img-responsive"
 	modalbtn.className = "btn btn-primary btn-lg"
 
 	newItem.className = "col-sm-4"
 	newDiv.className = "tshirt shirtName" + [i] 
 	modal.className = "modal fade"
-	modalContent.className = "modal-content"
+	modalContent.className = "col-lg-3"
 	modalHeader.className = "modal-header"
 	
 	// add text to elements

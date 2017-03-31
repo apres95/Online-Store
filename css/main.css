@@ -6,6 +6,9 @@ body {
 	font-size:70px;
 }
 
+.modalContent {
+	background-color: white;
+}
 .tshirt {
 	margin:20px 0;
 }
